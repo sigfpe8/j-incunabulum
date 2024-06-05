@@ -8,7 +8,7 @@ typedef struct a{I t,r,d[3],p[2];}*A;
 #define V1(f) A f(A w)
 #define V2(f) A f(A a,A w)
 #define DO(n,x) {I i=0,_n=(n);for(;i<_n;++i){x;}}
-I *ma(I n){R(I*)malloc(n*4);} V mv(I *d,I *s,I n){DO(n,d[i]=s[i]);}
+I *ma(I n){R(I*)malloc(n*sizeof(I));} V mv(I *d,I *s,I n){DO(n,d[i]=s[i]);}
 I tr(I r,I *d){I z=1;DO(r,z=z*d[i]);R z;}
 A ga(I t,I r,I *d){A z=(A)ma(5+tr(r,d));z->t=t,z->r=r,mv(z->d,d,r);
  R z;}
