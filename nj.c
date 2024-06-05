@@ -28,19 +28,19 @@ V1(sha){A z=ga(0,1,&w->r);mv(z->p,w->d,w->r);R z;}
 V1(id){R w;}V1(size){A z=ga(0,0,0);*z->p=w->r?*w->d:1;R z;}
 V pi(I i){P("%ld ",i);}V nl(){P("\n");}
 V pr(A w){I r=w->r,*d=w->d,n=tr(r,d);DO(r,pi(d[i]));nl();
- if(w->t)DO(n,P("< ");pr(w->p[i]))else DO(n,pi(w->p[i]));nl();}
+ if(w->t)DO(n,P("< ");pr((A)(w->p[i])))else DO(n,pi(w->p[i]));nl();}
 
 C vt[]="+{~<#,";
 A(*vd[])(A,A)={0,plus,from,find,0,rsh,cat},
  (*vm[])(A)={0,id,size,iota,box,sha,0};
-I st[26]; I qp(I a){R  a>='a'&&a<='z';} I qv(I a){R a<'a';}
+A st[26]; I qp(I a){R  a>='a'&&a<='z';} I qv(I a){R a<'a';}
 A ex(I *e){I a=*e;
- if(qp(a)){if(e[1]=='=')R st[a-'a']=ex(e+2);a= st[ a-'a'];}
- R qv(a)?(*vm[a])(ex(e+1)):e[1]?(*vd[e[1]])(a,ex(e+2)):(A)a;}
+ if(qp(a)){if(e[1]=='=')R st[a-'a']=ex(e+2);a=(I)st[a-'a'];}
+ R qv(a)?(*vm[a])(ex(e+1)):e[1]?(*vd[e[1]])((A)a,ex(e+2)):(A)a;}
 A noun(C c){A z;if(c<'0'||c>'9')R 0;z=ga(0,0,0);*z->p=c-'0';R z;}
 I verb(C c){I i=0;for(;vt[i];)if(vt[i++]==c)R i;R 0;}
 I *wd(C *s){I a,n=strlen(s),*e=ma(n+1);C c;
- DO(n,e[i]=(a=noun(c=s[i]))?a:(a=verb(c))?a:c);e[n]=0;R e;}
+ DO(n,e[i]=(a=(I)noun(c=s[i]))?a:(a=verb(c))?a:c);e[n]=0;R e;}
 
 int main(){C s[99];I l;
  while(fgets(s,sizeof(s),stdin)){
