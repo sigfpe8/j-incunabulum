@@ -156,7 +156,7 @@ a+b
 
 ### Monadic operator `~` (Iota)
 
-Returns an array or rank 1 (i.e. a vector) with integers from `0` to `n`, where `n` is the value of the expression to the right of `~`.
+Returns an array or rank 1 (i.e. a vector) with integers from `0` to `n-1`, where `n` is the value of the expression to the right of `~`.
 
 ```
 a=7
