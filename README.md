@@ -202,7 +202,7 @@ a,b
 7 5 2 0 1 2 3 4 5 
 ```
 
-### Monadic operator '#' (Shape)
+### Monadic operator `#` (Shape)
 
 Returns the shape of the argument, that is, a vector with the lengths of each dimention. A scalar is considered to have length 0.
 
@@ -215,7 +215,7 @@ Returns the shape of the argument, that is, a vector with the lengths of each di
 2 
 ```
 
-### Dyadic operator '#' (Reshape)
+### Dyadic operator `#` (Reshape)
 
 Reorganizes the elements of the right argument according to the shape of the left argument. Unfortunately arrays of rank 2 or 3 are still displayed in a linearized vector form. If the right arguments has less elements than the number of elements in the resulting array, the extra elements are repeatedely taken from right argument.
 
@@ -245,7 +245,7 @@ z#0
 0 0 0 0 
 ```
 
-### Monadic operator '<' (Box)
+### Monadic operator `<` (Box)
 
 The box operator transforms its operand, be it a scalar or an array, into a new scalar with a distict type. Since arrays can only contain scalars, the idea is to enclose other arrays in boxes so that they can be used as elements of another array. In this J prototype a boxed item is displayed with the symbol `<` before it. It is possible to enclose an item in many levels of boxes.
 
