@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-typedef char C;typedef long I;typedef void V;
+#include <stdint.h>
+typedef char C;typedef uintptr_t I;typedef void V;
 typedef struct a{I t,r,d[3],p[2];}*A;
 #define P printf
 #define R return
